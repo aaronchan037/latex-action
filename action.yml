@@ -1,0 +1,29 @@
+name: GitHub Action for LaTeX
+description: GitHub Action to Compile LaTeX documents
+author: Aaron Chan
+inputs:
+  texlive_version:
+    description: the version of TeX Live to be used
+  docker_image:
+    description: the docker image to be used
+  root_file:
+    description: the root LaTeX file to be compiled
+    required: true
+  working_directory:
+    description: the working directory for this action
+  compiler:
+    description: The LaTeX engine to be invoked
+    default: latexmk
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        "${GITHUB_ACTION_PATH}/action.sh"
+      env:
+        TEXLIVE_VERSION: ${{ inputs.texlive_version }}
+        DOCKER_IMAGE: ${{ inputs.docker_image }}
+        ROOT_FILE: ${{ inputs.root_file }}
+        WORKING_DIRECTORY: ${{ inputs.working_directory }}
+        COMPILER: ${{ inputs.compiler }}
