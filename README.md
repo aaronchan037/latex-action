@@ -1,2 +1,3 @@
-# latex-action
-Use LaTeX in GitHub Action
+## latex-action
+
+Compile LaTeX documents in GitHub Action
