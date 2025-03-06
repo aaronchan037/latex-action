@@ -1,10 +1,9 @@
 name: LaTeX in GitHub Action
 description: Compile LaTeX documents in GitHub Action
 author: Aaron Chan
-
 branding:
-  icon: book
-  color: purple
+  icon: "book"
+  color: "purple"
 
 inputs:
   texlive_version:
